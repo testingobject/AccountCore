@@ -1,0 +1,51 @@
+﻿@using SGPC.Resources
+@using SGPC.Helpers
+@model SGPC.ViewModels.TicketViewModel
+@{
+	ViewData["Title"] = "Detail";
+}
+
+<fieldset>
+	<legend><h2>Detail</h2></legend>
+	<form asp-action="Detail" asp-controller="Ticket">
+	
+		<table width="100%">
+
+			<tr>
+				<td>@TicketResource.Status</td>
+				<td>
+					<select asp-for="@Model.Status" asp-items="@SGPC.Helpers.Common.GetEnumTicketStatus(Model.Status)"></select>
+				</td>
+			</tr>
+
+			<tr>
+				<td>@TicketResource.Name</td>
+				<td>@Model.Name</td>
+			</tr>
+			<tr>
+				<td>@TicketResource.Subject</td>
+				<td>@Model.Subject</td>
+			</tr>
+			<tr>
+				<td>@TicketResource.ReferBy</td>
+				<td>@Model.ReferBy</td>
+
+
+			</tr>
+			<tr>
+				<td>@TicketResource.Status</td>
+				<td>@Model.Status</td>
+			</tr>
+			<tr>
+				<td>@TicketResource.Description</td>
+				<td>@Model.Description</td>
+		</tr>
+
+
+		</table>
+
+	
+	</form>
+
+</fieldset>
+

@@ -1,0 +1,48 @@
+﻿@model SGPC.ViewModels.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+<div class="container-fluid">
+    <div class="row align-items-center">
+        <div class="col-12 col-sm-12 col-md-6 pl-0 pr-0">
+            <img src="~/public/images/login-bg.png" class="w-100 h-100vh">
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 mobile-form ">
+            <div class="row justify-content-center">
+                <div class="col-11 col-md-12 col-lg-10">
+                    <form asp-action="Login" asp-controller="Account" class="form-section pl-5 pr-5 pt-4 pb-4 bg-white text-center">
+                        <!-- <img src="public/images/login-logo.png" class="mb-4"> -->
+                        <h2>@SGPC.Resources.Common.LoginPageHeading</h2>
+                        <h3>ADMIN</h3>
+                        <div class="form-group">
+                            <label asp-for="UserName"></label>
+                            <input asp-for="UserName" class="form-control" />
+                            <span class="text-danger" asp-validation-for="UserName"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Password"></label>
+                            <div class="position-relative">
+                                <input asp-for="Password" type="password" class="form-control" />
+                                <span class="position-absolute top-10 right-10">
+                                    <i class=" fa fa-eye" aria-hidden="true"></i>
+                                </span>
+                                <span class="text-danger" asp-validation-for="Password"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="text-danger">@ViewBag.ErrorList</label>
+                        </div>
+                        <div class="form-group text-right mb-4 mt-5">
+                            <div class="row justify-content-center">
+                                <div class="col-10 col-lg-9">
+                                    <button type="submit" class="btn btn-save btn-block">@SGPC.Resources.Common.Login</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
